@@ -1,11 +1,12 @@
 function makanTerusRekursif(waktu) {
   // you can only write your code here!
+
   if(waktu == 0) {
     return 0;
-  } else if(waktu / 15 < 1) {
+  } else if(waktu < 15) {
     return 1;
-  } else if(waktu / 15 > 1) {
-    return Math.round(waktu / 15);
+  } else if(waktu >= 15) {
+    return 1 + makanTerusRekursif(waktu - 15);
   }
 }
 
