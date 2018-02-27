@@ -1,32 +1,16 @@
-var angkaAsli;
-var input;
-var jumlah = 0;
-var i = 0;
-var hasilAkhir = 0;
 function totalDigitRekursif(angka) {
   // you can only write your code here!
-  input = angka.toString().split('');
-
-
-  if(input.length > 1) {
-    i = 0;
-    jumlah = 0;
-    angkaAsli=angka.toString().split('');
-    totalDigitRekursif(angkaAsli[i]);
+  angka = angka.toString();
+  var temp = 0;
+  
+  if(angka.length == 1) {
+    temp += parseInt(angka);
+    return temp;
+  } else {
+    return parseInt(angka[0]) + totalDigitRekursif(angka.slice(1));
   }
-  else {
-    jumlah = jumlah + parseInt(angka);
-    i++;
-    if(i < angkaAsli.length)
-    {
-      totalDigitRekursif(angkaAsli[i]);
-    }
-    else{
-      hasilAkhir=jumlah;
-      jumlah=0;
-    }
-  }
-  return hasilAkhir;
+  
+  
 }
 
 // TEST CASES
